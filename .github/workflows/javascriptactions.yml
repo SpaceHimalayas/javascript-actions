@@ -62,8 +62,12 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        uses: ./.github/actions/deploys3javascript
+        uses: ./.github/actions/docker
         with: 
           bucket: 
             bucket: gha-custom-action-hosting
             dist-folder: ./dist
+      - name: Output Information
+        run: |
+          echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
+
