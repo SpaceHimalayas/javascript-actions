@@ -64,7 +64,6 @@ jobs:
       - name: Deploy site
         uses: ./.github/actions/docker
         with: 
-          bucket: 
             bucket: gha-custom-action-hosting
             dist-folder: ./dist
       - name: Output Information
